@@ -16,26 +16,29 @@ public class A1Novice {
 			String first = scan.next();
 			String last = scan.next();
 			String name = (first.charAt(0) + ". " + last);
-			System.out.println(name);
-			//Creates and prints the person's name.
+			//Creates the name
 			
 			int groc = scan.nextInt();
-			System.out.println(groc);
 			//counts the number of items they purchased
 			double total = 0;
+			//sets the starting total at 0
 			
 				for (int g = 0; g<groc; g++) {
 					int count = scan.nextInt();
 					String item = scan.next();
+					//puts the item name somewhere, despite it being irrelevant
 					double price = scan.nextDouble();
 					double itotal = count * price;
 					total = total + itotal;
+					//adds the total of each item together
 			}
 			String ftotal = String.format("%.2f", total);
-			System.out.println(ftotal);
+			//formats the double
+			System.out.println(name + ": " + ftotal);
+			//prints the name and total
 		}
 		scan.close();
-		System.out.println("Closing...");
+		//closes the scanner
 		
 	}
 }
