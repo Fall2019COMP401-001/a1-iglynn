@@ -1,6 +1,7 @@
 package a1;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class A1Jedi {
 
@@ -29,13 +30,28 @@ public class A1Jedi {
 			//gets rid of the useless name
 			
 			int purchase = scan.nextInt();
+			ArrayList<String> done = new ArrayList<>();
+			//creates an arraylist to prevent double purchases
 			
 			for (int g = 0; g < purchase; g++) {
 				int num = scan.nextInt();
 				String item = scan.next();
+				//gets the number of items purchased
+				
 				int dex = arrayScan(shop, item);
 				bought[dex] = bought[dex] + num;
-				customer[dex] = customer[dex] + 1;
+				//increases the purchase count
+				
+				if (!done.contains(item)) {
+					customer[dex] = customer[dex] + 1;
+				}
+				//makes sure the customer number only increases if the item has not been bought before
+				
+				
+				if (!done.contains(item)) {
+					done.add(item);
+				}
+				//adds the item to the arraylist to prevent double counting
 			}
 			
 		}
@@ -47,6 +63,7 @@ public class A1Jedi {
 			} else
 			System.out.println(customer[i] + " customers bought " + bought[i] + " " + shop[i]);
 		}
+			//prints out results, and changes 0 to no if no one bought an item
 		scan.close();
 	}
 	
@@ -55,7 +72,7 @@ public class A1Jedi {
 		for (int i = 0; i < shop.length; i++) {
 			if (item.equals(shop[i])) {
 				return i;
-			}
+			} 				//scans the string array and compares it to the item to find its index number
 		} return 0;
 	}
 }
