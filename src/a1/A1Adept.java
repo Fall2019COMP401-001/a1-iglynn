@@ -67,6 +67,7 @@ public class A1Adept {
 		int index = 0;
 		for (int i = 1; i < monies.length; i++) {
 			if (monies[i] < min) {
+				min = monies[i];
 				index = i;
 			}
 		}
@@ -79,6 +80,7 @@ public class A1Adept {
 		int index = 0;
 		for (int i = 1; i < monies.length; i++) {
 			if (monies[i] > max) {
+				max = monies[i];
 				index = i;
 			}
 		}
