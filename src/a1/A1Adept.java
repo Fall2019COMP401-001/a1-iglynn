@@ -57,6 +57,7 @@ public class A1Adept {
 		System.out.println("Biggest: " + names[big] + " (" + String.format("%.2f",spent[big]) + ")");
 		System.out.println("Smallest: " + names[small] + " (" + String.format("%.2f",spent[small]) + ")");
 		System.out.println("Average: " + String.format("%.2f",avg));
+		//prints the correct data in the format
 		
 		scan.close();
 	}
@@ -69,7 +70,6 @@ public class A1Adept {
 				index = i;
 			}
 		}
-		System.out.println(index);
 		return index;
 		//finds the smallest number and returns its index
 	}
